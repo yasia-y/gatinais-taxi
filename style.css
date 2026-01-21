@@ -1,113 +1,43 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  transition: 0.2s ease;
-}
+/* Reset et typographie */
+* {box-sizing:border-box; font-family: 'Arial', sans-serif; margin:0; padding:0; transition: 0.2s ease;}
+body {background:#0e0e0e; color:#fff; line-height:1.6;}
 
-body {
-  margin: 0;
-  background: #0e0e0e;
-  color: white;
-}
+/* Header */
+header {text-align:center; padding:50px 20px; background:#111;}
+header h1 {font-size:3rem;}
+header span {color:#FFD600;}
+header p {color:#ccc; margin-top:5px;}
+.cta {margin-top:20px;}
+.cta a {display:inline-block; margin:8px; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:bold;}
+.call {background:#FFD600; color:#000;}
+.whatsapp {background:#1ebe5d; color:#fff;}
+.cta a:hover {opacity:0.85; transform:scale(1.05);}
 
-/* HEADER */
+/* Sections */
+section {padding:50px 20px; max-width:900px; margin:auto; margin-top:30px; background:#151515; border-radius:12px;}
+h2 {color:#FFD600; margin-bottom:20px; text-align:center; font-size:2rem;}
+p {text-align:center; margin-bottom:20px;}
 
-header {
-  padding: 40px 20px;
-  text-align: center;
-}
+/* Services */
+.cards {display:flex; flex-wrap:wrap; justify-content:center; gap:15px;}
+.card {flex:1 1 250px; padding:20px; background:#1a1a1a; border-radius:10px; text-align:center; font-size:1.1rem;}
 
-header h1 {
-  font-size: 2.5rem;
-}
+/* Formulaire */
+form {display:flex; flex-direction:column; gap:12px;}
+input, textarea, button {padding:12px; border-radius:8px; border:none; font-size:1rem;}
+input, textarea {background:#222; color:#fff;}
+textarea {resize:none;}
+button {background:#FFD600; color:#000; font-weight:bold; cursor:pointer;}
+button:hover {opacity:0.85; transform:scale(1.03);}
+#successMessage {text-align:center; font-weight:bold; margin-top:15px; color:#FFD600;}
 
-header span {
-  color: #FFD600;
-}
+/* Map */
+.map-container {margin-top:20px; border-radius:10px; overflow:hidden;}
 
-header p {
-  color: #ccc;
-}
+/* Footer */
+footer {text-align:center; padding:20px; color:#aaa; margin-top:30px;}
 
-/* BOUTONS */
-
-.cta {
-  margin-top: 20px;
-}
-
-.cta a {
-  display: inline-block;
-  padding: 12px 20px;
-  margin: 8px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.call {
-  background: #FFD600;
-  color: black;
-}
-
-.whatsapp {
-  background: #1ebe5d;
-  color: white;
-}
-
-/* SECTIONS */
-
-section {
-  background: #151515;
-  border-radius: 12px;
-  margin-top: 30px;
-}
-
-h2 {
-  color: #FFD600;
-}
-
-/* SERVICES */
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  padding: 10px 0;
-  border-bottom: 1px solid #222;
-}
-
-/* FORM */
-
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-input, textarea, button {
-  margin: 8px 0;
-  padding: 12px;
-  border-radius: 6px;
-  border: none;
-}
-
-input, textarea {
-  background: #1a1a1a;
-  color: white;
-}
-
-button:hover,
-.cta a:hover {
-  opacity: 0.85;
-  transform: scale(1.02);
-}
-
-/* FOOTER */
-
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #aaa;
+/* Responsive */
+@media (max-width:768px){
+  .cards {flex-direction:column; align-items:center;}
 }
