@@ -2,90 +2,80 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Gatinais Taxi - 24h/24 - toutes distances</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Gatinais Taxi - Taxi à Amilly 24h/24</title>
   <meta name="description" content="Gatinais Taxi à Amilly. Service taxi 24h/24. Réservation rapide par téléphone ou WhatsApp. Transport gare, aéroport, longue distance.">
 
   <link rel="stylesheet" href="style.css">
-  <meta name="keywords" content="Taxi Amilly, Taxi Montargis, Gatinais Taxi, Taxi 24h Amilly">
 </head>
-
 <body>
 
-<!-- HEADER -->
+<!-- Header -->
 <header>
-  <h1><span>GATINAIS</span> TAXI</h1>
-  <p>Taxi à Amilly • Service 24h/24</p>
-
-  <div class="cta">
-    <a class="call" href="tel:+33784539385">📞 Appeler</a>
-    <a class="whatsapp" href="https://wa.me/33784539385">💬 WhatsApp</a>
+  <div class="header-content">
+    <h1><span>GATINAIS</span> TAXI</h1>
+    <p>Taxi à Amilly et Montargis • Service 24h/24</p>
+    <div class="cta">
+      <a class="call" href="tel:+33600000000">📞 Appeler</a>
+      <a class="whatsapp" href="https://wa.me/33600000000">💬 WhatsApp</a>
+    </div>
   </div>
 </header>
 
+<!-- Services -->
+<section id="services">
+  <h2>Nos services</h2>
+  <div class="cards">
+    <div class="card">🚕 Transport local Amilly & Montargis</div>
+    <div class="card">✈️ Transferts gare & aéroport</div>
+    <div class="card">🧳 Longues distances</div>
+    <div class="card">🏥 Transport médical non urgent</div>
+    <div class="card">🕐 Disponible 24h/24 - 7j/7</div>
+  </div>
+</section>
 
-<!-- RESERVATION -->
+<!-- Reservation -->
 <section id="reservation">
   <h2>Demande de réservation</h2>
-
   <p>Remplissez le formulaire. Nous vous confirmons rapidement par téléphone.</p>
 
-  <!-- A REMPLACER PAR TON GOOGLE FORM -->
-  <form action="https://docs.google.com/forms/d/e/1FAIpQLSfPZv-VmHsJqXPkcH36ijsaJxTSIx3ivPFZITq6BvEPuRgSxA/formResponse" method="POST" target="_blank">
+  <form id="reservationForm"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSfPZv-VmHsJqXPkcH36ijsaJxTSIx3ivPFZITq6BvEPuRgSxA/formResponse"
+    method="POST"
+    target="hidden_iframe"
+    onsubmit="showThankYou()">
 
-    <input type="text" name="entry.1131212610" placeholder="Nom" required>
-
+    <input type="text" name="entry.1131212610" placeholder="Votre nom" required>
     <input type="tel" name="entry.1022644342" placeholder="Téléphone" required>
-
     <input type="date" name="entry.1453912241" required>
-
     <input type="time" name="entry.756171070" required>
-
     <textarea name="entry.1083295540" placeholder="Adresse de départ"></textarea>
-
     <textarea name="entry.1567789891" placeholder="Destination"></textarea>
-
     <button type="submit">Envoyer la demande</button>
-
   </form>
 
-  <!-- iframe invisible -->
-<iframe name="hidden_iframe" style="display:none;"></iframe>
-
-<!-- message confirmation -->
-<p id="successMessage" style="display:none; color:#FFD600; margin-top:15px;">
-✅ Merci ! Votre demande a bien été envoyée.  
-Nous vous contactons rapidement.
-</p>
-
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+  <p id="successMessage" style="display:none;">✅ Merci ! Votre demande a bien été envoyée. Nous vous contactons rapidement.</p>
 </section>
 
-<!-- ZONE -->
+<!-- Zone desservie + Map -->
 <section id="zone">
   <h2>Zone desservie</h2>
+  <p>Nous desservons principalement : <strong>Amilly, Montargis et alentours</strong></p>
 
-  <p>Nous desservons principalement :</p>
-
-  <strong>Amilly, Montargis et alentours</strong>
+  <div class="map-container">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.123456!2d2.7500!3d48.1500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5c123456789ab%3A0x123456abcdef!2sAmilly%2C%20France!5e0!3m2!1sfr!2sfr!4v1580000000000"
+      width="100%"
+      height="350"
+      style="border:0; border-radius:10px;"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
 </section>
 
-<section id="map">
-  <h2>Nous trouver</h2>
-
-  <iframe 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2670.7683987149057!2d2.7933773999999905!3d47.9795356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ef81226e29c5df%3A0xfb1323a981a2cd00!2sGatinais%20Taxi!5e0!3m2!1sfr!2sfr!4v1769020198174!5m2!1sfr!2sfr"
-    width="100%" 
-    height="300" 
-    style="border:0; border-radius:10px;"
-    loading="lazy">
-  </iframe>
-
-</section>
-
-
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
   <p>© 2026 Gatinais Taxi — Amilly</p>
   <p>Service professionnel de transport de personnes</p>
@@ -99,6 +89,5 @@ function showThankYou() {
   }, 1000);
 }
 </script>
-
 </body>
 </html>
