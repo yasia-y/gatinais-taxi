@@ -2,13 +2,14 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Gatinais Taxi - Taxi à Amilly 24h/24</title>
+  <title>Gatinais Taxi - 24h/24 - toutes distances</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Gatinais Taxi à Amilly. Service taxi 24h/24. Réservation rapide par téléphone ou WhatsApp. Transport gare, aéroport, longue distance.">
 
   <link rel="stylesheet" href="style.css">
+  <meta name="keywords" content="Taxi Amilly, Taxi Montargis, Gatinais Taxi, Taxi 24h Amilly">
 </head>
 
 <body>
@@ -24,18 +25,6 @@
   </div>
 </header>
 
-<!-- SERVICES -->
-<section id="services">
-  <h2>Nos services</h2>
-
-  <ul>
-    <li>🚕 Transport local Amilly & Montargis</li>
-    <li>✈️ Transferts gare & aéroport</li>
-    <li>🧳 Longues distances</li>
-    <li>🏥 Transport médical non urgent</li>
-    <li>🕐 Disponible 24h/24 - 7j/7</li>
-  </ul>
-</section>
 
 <!-- RESERVATION -->
 <section id="reservation">
@@ -62,6 +51,15 @@
 
   </form>
 
+  <!-- iframe invisible -->
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+<!-- message confirmation -->
+<p id="successMessage" style="display:none; color:#FFD600; margin-top:15px;">
+✅ Merci ! Votre demande a bien été envoyée.  
+Nous vous contactons rapidement.
+</p>
+
 </section>
 
 <!-- ZONE -->
@@ -73,11 +71,34 @@
   <strong>Amilly, Montargis et alentours</strong>
 </section>
 
+<section id="map">
+  <h2>Nous trouver</h2>
+
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2670.7683987149057!2d2.7933773999999905!3d47.9795356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ef81226e29c5df%3A0xfb1323a981a2cd00!2sGatinais%20Taxi!5e0!3m2!1sfr!2sfr!4v1769020198174!5m2!1sfr!2sfr"
+    width="100%" 
+    height="300" 
+    style="border:0; border-radius:10px;"
+    loading="lazy">
+  </iframe>
+
+</section>
+
+
 <!-- FOOTER -->
 <footer>
   <p>© 2026 Gatinais Taxi — Amilly</p>
   <p>Service professionnel de transport de personnes</p>
 </footer>
+
+<script>
+function showThankYou() {
+  setTimeout(() => {
+    document.getElementById("reservationForm").style.display = "none";
+    document.getElementById("successMessage").style.display = "block";
+  }, 1000);
+}
+</script>
 
 </body>
 </html>
