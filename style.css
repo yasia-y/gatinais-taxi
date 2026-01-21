@@ -2,19 +2,33 @@
 * {box-sizing:border-box; margin:0; padding:0; font-family: 'Arial', sans-serif; transition:0.2s ease;}
 body {background:#0e0e0e; color:#fff; line-height:1.6;}
 
-/* Header avec photo de taxi */
+/* Header avec photo et logo */
 header {
   height: 70vh;
   background: url('taxi.jpg') center/cover no-repeat;
   display:flex; justify-content:center; align-items:center; position:relative;
 }
+
 header::before {
   content:"";
   position:absolute; top:0; left:0; width:100%; height:100%;
   background:rgba(0,0,0,0.6);
 }
+
+/* Logo dans le header */
+.header-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 60px; /* ajuster la taille du logo */
+  z-index: 10;
+}
+
+/* Overlay du texte */
 .header-overlay {
-  position:relative; text-align:center; color:#fff;
+  position: relative;
+  text-align: center;
+  color: #fff;
 }
 .header-overlay h1 {font-size:3rem;}
 .header-overlay h1 span {color:#FFD600;}
@@ -33,7 +47,7 @@ section {
   margin-top:30px;
   background:#151515;
   border-radius:12px;
-  opacity:0; transform:translateY(30px); /* fade-in initial */
+  opacity:0; transform:translateY(30px);
   transition: all 1s ease-out;
 }
 .appear {opacity:1; transform:translateY(0);}
@@ -59,4 +73,5 @@ footer {text-align:center; padding:20px; color:#aaa; margin-top:30px;}
 @media (max-width:768px){
   header h1 {font-size:2rem;}
   section {padding:30px 15px;}
+  .header-logo {height:50px;}
 }
