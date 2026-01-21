@@ -10,9 +10,9 @@
 </head>
 <body>
 
-<!-- Header -->
+<!-- Header avec photo de fond -->
 <header>
-  <div class="header-content">
+  <div class="header-overlay fade-in">
     <h1><span>GATINAIS</span> TAXI</h1>
     <p>Taxi à Amilly et Montargis • Service 24h/24</p>
     <div class="cta">
@@ -22,20 +22,8 @@
   </div>
 </header>
 
-<!-- Services -->
-<section id="services">
-  <h2>Nos services</h2>
-  <div class="cards">
-    <div class="card">🚕 Transport local Amilly & Montargis</div>
-    <div class="card">✈️ Transferts gare & aéroport</div>
-    <div class="card">🧳 Longues distances</div>
-    <div class="card">🏥 Transport médical non urgent</div>
-    <div class="card">🕐 Disponible 24h/24 - 7j/7</div>
-  </div>
-</section>
-
 <!-- Reservation -->
-<section id="reservation">
+<section id="reservation" class="fade-in">
   <h2>Demande de réservation</h2>
   <p>Remplissez le formulaire. Nous vous confirmons rapidement par téléphone.</p>
 
@@ -52,6 +40,7 @@
     <textarea name="entry.1083295540" placeholder="Adresse de départ"></textarea>
     <textarea name="entry.1567789891" placeholder="Destination"></textarea>
     <button type="submit">Envoyer la demande</button>
+
   </form>
 
   <iframe name="hidden_iframe" style="display:none;"></iframe>
@@ -59,10 +48,8 @@
 </section>
 
 <!-- Zone desservie + Map -->
-<section id="zone">
-  <h2>Zone desservie</h2>
-  <p>Nous desservons principalement : <strong>Amilly, Montargis et alentours</strong></p>
-
+<section id="zone" class="fade-in">
+  <h2>Où nous trouver</h2>
   <div class="map-container">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.123456!2d2.7500!3d48.1500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e5c123456789ab%3A0x123456abcdef!2sAmilly%2C%20France!5e0!3m2!1sfr!2sfr!4v1580000000000"
@@ -76,18 +63,35 @@
 </section>
 
 <!-- Footer -->
-<footer>
+<footer class="fade-in">
   <p>© 2026 Gatinais Taxi — Amilly</p>
   <p>Service professionnel de transport de personnes</p>
 </footer>
 
+<!-- Boutons flottants -->
+<a href="tel:+33784539385" class="floating call">📞 Appeler</a>
+<a href="https://wa.me/33784539385" class="floating whatsapp">💬 WhatsApp</a>
+
 <script>
+// Message de confirmation
 function showThankYou() {
   setTimeout(() => {
     document.getElementById("reservationForm").style.display = "none";
     document.getElementById("successMessage").style.display = "block";
   }, 1000);
 }
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) return;
+    entry.target.classList.add('appear');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
 </script>
 </body>
 </html>
