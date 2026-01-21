@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  transition: 0.2s ease;
 }
 
 body {
@@ -56,9 +57,9 @@ header p {
 /* SECTIONS */
 
 section {
-  padding: 40px 20px;
-  max-width: 600px;
-  margin: auto;
+  background: #151515;
+  border-radius: 12px;
+  margin-top: 30px;
 }
 
 h2 {
@@ -96,11 +97,10 @@ input, textarea {
   color: white;
 }
 
-button {
-  background: #FFD600;
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
+button:hover,
+.cta a:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
 }
 
 /* FOOTER */
