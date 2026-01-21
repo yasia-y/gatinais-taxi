@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #0e0e0e;
+  color: white;
+}
+
+/* HEADER */
+
+header {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+header span {
+  color: #FFD600;
+}
+
+header p {
+  color: #ccc;
+}
+
+/* BOUTONS */
+
+.cta {
+  margin-top: 20px;
+}
+
+.cta a {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.call {
+  background: #FFD600;
+  color: black;
+}
+
+.whatsapp {
+  background: #1ebe5d;
+  color: white;
+}
+
+/* SECTIONS */
+
+section {
+  padding: 40px 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+h2 {
+  color: #FFD600;
+}
+
+/* SERVICES */
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+}
+
+/* FORM */
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea, button {
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+input, textarea {
+  background: #1a1a1a;
+  color: white;
+}
+
+button {
+  background: #FFD600;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
+}
