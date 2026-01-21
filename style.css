@@ -1,26 +1,44 @@
 /* Reset et typographie */
-* {box-sizing:border-box; font-family: 'Arial', sans-serif; margin:0; padding:0; transition: 0.2s ease;}
+* {box-sizing:border-box; margin:0; padding:0; font-family: 'Arial', sans-serif; transition:0.2s ease;}
 body {background:#0e0e0e; color:#fff; line-height:1.6;}
 
-/* Header */
-header {text-align:center; padding:50px 20px; background:#111;}
-header h1 {font-size:3rem;}
-header span {color:#FFD600;}
-header p {color:#ccc; margin-top:5px;}
+/* Header avec photo de fond */
+header {
+  height: 70vh;
+  background: url('https://images.unsplash.com/photo-1563720228879-5f12585c96b2?auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
+  display:flex; justify-content:center; align-items:center; position:relative;
+}
+header::before {
+  content:"";
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+}
+.header-overlay {
+  position:relative; text-align:center; color:#fff;
+}
+.header-overlay h1 {font-size:3rem;}
+.header-overlay h1 span {color:#FFD600;}
+.header-overlay p {margin:10px 0; color:#ccc;}
 .cta {margin-top:20px;}
 .cta a {display:inline-block; margin:8px; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:bold;}
 .call {background:#FFD600; color:#000;}
 .whatsapp {background:#1ebe5d; color:#fff;}
 .cta a:hover {opacity:0.85; transform:scale(1.05);}
 
-/* Sections */
-section {padding:50px 20px; max-width:900px; margin:auto; margin-top:30px; background:#151515; border-radius:12px;}
+/* Section */
+section {
+  padding:50px 20px;
+  max-width:900px;
+  margin:auto;
+  margin-top:30px;
+  background:#151515;
+  border-radius:12px;
+  opacity:0; transform:translateY(30px); /* pour fade-in */
+  transition: all 1s ease-out;
+}
+.appear {opacity:1; transform:translateY(0);}
 h2 {color:#FFD600; margin-bottom:20px; text-align:center; font-size:2rem;}
 p {text-align:center; margin-bottom:20px;}
-
-/* Services */
-.cards {display:flex; flex-wrap:wrap; justify-content:center; gap:15px;}
-.card {flex:1 1 250px; padding:20px; background:#1a1a1a; border-radius:10px; text-align:center; font-size:1.1rem;}
 
 /* Formulaire */
 form {display:flex; flex-direction:column; gap:12px;}
@@ -37,7 +55,25 @@ button:hover {opacity:0.85; transform:scale(1.03);}
 /* Footer */
 footer {text-align:center; padding:20px; color:#aaa; margin-top:30px;}
 
+/* Boutons flottants */
+.floating {
+  position:fixed;
+  bottom:20px;
+  padding:14px 18px;
+  border-radius:50px;
+  font-size:1.3rem;
+  font-weight:bold;
+  text-decoration:none;
+  z-index:1000;
+  box-shadow:0 4px 6px rgba(0,0,0,0.3);
+}
+.floating.call {right:90px; background:#FFD600; color:#000;}
+.floating.whatsapp {right:20px; background:#1ebe5d; color:#fff;}
+.floating:hover {opacity:0.85; transform:scale(1.1);}
+
 /* Responsive */
 @media (max-width:768px){
-  .cards {flex-direction:column; align-items:center;}
+  header h1 {font-size:2rem;}
+  section {padding:30px 15px;}
+  .floating.call {right:70px;}
 }
