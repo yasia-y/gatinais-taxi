@@ -228,9 +228,8 @@ footer {
 ================================ */
 
 .fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  opacity: 1; /* visible by default */
+  transform: translateY(0);
 }
 
 .fade-in.appear {
@@ -267,3 +266,4 @@ footer {
   }
 
 }
+
