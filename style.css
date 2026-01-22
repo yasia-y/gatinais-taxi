@@ -20,7 +20,7 @@ header::before {
   position: absolute;
   top: 20px;
   right: 20px;
-  height: 60px; /* ajuster la taille du logo */
+  height: 80px; /* ajuster la taille du logo */
   z-index: 10;
 }
 
@@ -41,18 +41,33 @@ header::before {
 
 /* Section */
 section {
-  padding:50px 20px;
+  padding:50px 25px;
   max-width:900px;
-  margin:auto;
-  margin-top:30px;
-  background:#151515;
+  margin:30px auto;
+  background:#222;
   border-radius:12px;
-  opacity:0; transform:translateY(30px);
-  transition: all 1s ease-out;
+  box-shadow:0 0 20px rgba(0,0,0,0.4);
+  border:1px solid rgba(255,255,255,0.05);
+
+  opacity:0;
+  transform:translateY(30px);
+  transition: all 0.8s ease-out;
 }
-.appear {opacity:1; transform:translateY(0);}
-h2 {color:#FFD600; margin-bottom:20px; text-align:center; font-size:2rem;}
-p {text-align:center; margin-bottom:20px;}
+
+section:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+section::before {
+  content:"";
+  display:block;
+  height:3px;
+  width:60px;
+  background:#FFD600;
+  margin:0 auto 20px auto;
+  border-radius:5px;
+}
 
 /* Formulaire */
 form {display:flex; flex-direction:column; gap:12px;}
