@@ -1,92 +1,269 @@
-/* Reset et typographie */
-* {box-sizing:border-box; margin:0; padding:0; font-family: 'Arial', sans-serif; transition:0.2s ease;}
-body {background:#0e0e0e; color:#fff; line-height:1.6;}
+/* ================================
+   RESET + BASE
+================================ */
 
-/* Header avec photo et logo */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0e0e0e;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
 header {
   height: 70vh;
-  background: url('taxi.jpg') center/cover no-repeat;
-  display:flex; justify-content:center; align-items:center; position:relative;
+  background: url('taxi.jpg') center / cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
+/* Dark overlay */
 header::before {
-  content:"";
-  position:absolute; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.6);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
 }
 
-/* Logo dans le header */
+/* Logo */
 .header-logo {
   position: absolute;
   top: 20px;
   right: 20px;
-  height: 80px; /* ajuster la taille du logo */
-  z-index: 10;
+  height: 80px;
+  z-index: 2;
 }
 
-/* Overlay du texte */
+/* Header content */
 .header-overlay {
   position: relative;
   text-align: center;
+  z-index: 2;
+}
+
+.header-overlay h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.header-overlay h1 span {
+  color: #FFD600;
+}
+
+.header-overlay p {
+  color: #cccccc;
+  margin-top: 10px;
+}
+
+
+/* ================================
+   CTA BUTTONS
+================================ */
+
+.cta {
+  margin-top: 25px;
+}
+
+.cta a {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s ease;
+}
+
+.call {
+  background: #FFD600;
+  color: #000;
+}
+
+.whatsapp {
+  background: #1ebe5d;
   color: #fff;
 }
-.header-overlay h1 {font-size:3rem;}
-.header-overlay h1 span {color:#FFD600;}
-.header-overlay p {margin:10px 0; color:#ccc;}
-.cta {margin-top:20px;}
-.cta a {display:inline-block; margin:8px; padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:bold;}
-.call {background:#FFD600; color:#000;}
-.whatsapp {background:#1ebe5d; color:#fff;}
-.cta a:hover {opacity:0.85; transform:scale(1.05);}
 
-/* Section */
+.cta a:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+
+/* ================================
+   SECTIONS (CARD STYLE)
+================================ */
+
 section {
-  padding:50px 25px;
-  max-width:900px;
-  margin:30px auto;
-  background:#222;
-  border-radius:12px;
-  box-shadow:0 0 20px rgba(0,0,0,0.4);
-  border:1px solid rgba(255,255,255,0.05);
-
-  opacity:0;
-  transform:translateY(30px);
-  transition: all 0.8s ease-out;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 50px 25px;
+  background: #222;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
 }
 
-section:hover {
-  transform: translateY(-5px) scale(1.01);
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+/* Section title */
+section h2 {
+  color: #FFD600;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-section::before {
-  content:"";
-  display:block;
-  height:3px;
-  width:60px;
-  background:#FFD600;
-  margin:0 auto 20px auto;
-  border-radius:5px;
+/* Text */
+section p {
+  text-align: center;
+  color: #cccccc;
+  margin-bottom: 15px;
 }
 
-/* Formulaire */
-form {display:flex; flex-direction:column; gap:12px;}
-input, textarea, button {padding:12px; border-radius:8px; border:none; font-size:1rem;}
-input, textarea {background:#222; color:#fff;}
-textarea {resize:none;}
-button {background:#FFD600; color:#000; font-weight:bold; cursor:pointer;}
-button:hover {opacity:0.85; transform:scale(1.03);}
-#successMessage {text-align:center; font-weight:bold; margin-top:15px; color:#FFD600;}
+/* Lists */
+section ul {
+  list-style: none;
+  text-align: center;
+}
 
-/* Map */
-.map-container {margin-top:20px; border-radius:10px; overflow:hidden;}
+section ul li {
+  padding: 8px 0;
+  font-size: 1.05rem;
+}
 
-/* Footer */
-footer {text-align:center; padding:20px; color:#aaa; margin-top:30px;}
 
-/* Responsive */
-@media (max-width:768px){
-  header h1 {font-size:2rem;}
-  section {padding:30px 15px;}
-  .header-logo {height:50px;}
+/* ================================
+   FORM
+================================ */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+textarea,
+button {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+/* Inputs */
+input,
+textarea {
+  background: #111;
+  color: #ffffff;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #FFD600;
+}
+
+/* Button */
+button {
+  background: #FFD600;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+}
+
+
+/* Success message */
+
+#successMessage {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #FFD600;
+}
+
+
+/* ================================
+   MAP
+================================ */
+
+.map-container {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  color: #aaaaaa;
+}
+
+
+/* ================================
+   FADE-IN ANIMATION
+================================ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ================================
+   RESPONSIVE MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  header {
+    height: 60vh;
+  }
+
+  .header-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .header-logo {
+    height: 50px;
+  }
+
+  section {
+    padding: 35px 18px;
+  }
+
+  .cta a {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
 }
