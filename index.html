@@ -35,7 +35,7 @@
 
 </section>
 
-<section id="pourquoi nous" class="fade-in">
+<section id="pourquoi-nous" class="fade-in">
   <h2>Pourquoi nous choisir ?</h2>
   <ul>
     <li> Chauffeurs professionnels et ponctuels</li>
@@ -101,15 +101,22 @@ function showThankYou() {
 
 // Fade-in on scroll
 const faders = document.querySelectorAll('.fade-in');
-const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if(!entry.isIntersecting) return;
-    entry.target.classList.add('appear');
-    observer.unobserve(entry.target);
-  });
-}, appearOptions);
-faders.forEach(fader => appearOnScroll.observe(fader));
+
+const appearOnScroll = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('appear');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+faders.forEach(el => appearOnScroll.observe(el));
+
 </script>
 </body>
 </html>
+
