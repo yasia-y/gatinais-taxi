@@ -100,6 +100,13 @@ section ul {
   margin:0;
 }
 
+.seo-hidden {
+  position: absolute;
+  left: -9999px;
+  height: 1px;
+  overflow: hidden;
+}
+
 
 section ul li {
   background: rgba(255,255,255,0.04);
