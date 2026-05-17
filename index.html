@@ -54,7 +54,7 @@
   <p>Remplissez le formulaire. Nous vous confirmons rapidement par téléphone.</p>
 
   <form id="reservationForm"
-    action="https://docs.google.com/forms/d/e/https://docs.google.com/forms/d/e/1FAIpQLScaQvuAIGOUQ3mhsa6GoOG9Pacx1B_XiJ5khJ_lGlQvNxJRNQ/viewform?usp=dialog/formResponse"
+    action="https://docs.google.com/forms/d/e/1FAIpQLScaQvuAIGOUQ3mhsa6GoOG9Pacx1B_XiJ5khJ_lGlQvNxJRNQ/formResponse"
     method="POST"
     target="hidden_iframe"
     onsubmit="showThankYou()">
@@ -137,8 +137,18 @@ const appearOnScroll = new IntersectionObserver(
 
 faders.forEach(el => appearOnScroll.observe(el));
 
-
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TaxiService",
+  "name": "Gatinais Taxi",
+  "areaServed": "Montargis",
+  "telephone": "+33784539385",
+  "email": "loirettaxi45@gmail.com"
+}
+</script>
+
 </body>
 </html>
-
