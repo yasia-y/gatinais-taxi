@@ -5,7 +5,7 @@ body {background:#0e0e0e; color:#fff; line-height:1.6;}
 /* Header avec photo et logo */
 header {
   height: 70vh;
-  background: url('taxi.jpg') center/cover no-repeat;
+  background: url('taxi.webp') center/cover no-repeat;
   display:flex; justify-content:center; align-items:center; position:relative;
 }
 
