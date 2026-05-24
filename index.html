@@ -54,25 +54,19 @@
   <h2>Demande de réservation</h2>
   <p>Remplissez le formulaire. Nous vous confirmons rapidement par téléphone.</p>
 
-  <form id="reservationForm"
-    action="https://docs.google.com/forms/d/e/1FAIpQLScaQvuAIGOUQ3mhsa6GoOG9Pacx1B_XiJ5khJ_lGlQvNxJRNQ/formResponse"
-    method="POST"
-    target="hidden_iframe"
-    onsubmit="showThankYou()">
+<section id="reservation" class="fade-in">
+  <h2>Demande de réservation</h2>
 
-    <input type="text" name="entry.81971081" placeholder="Votre nom et prénom" required>
-    <input type="tel" name="entry.1735440126" placeholder="Téléphone" required>
-    <input type="date" name="entry.623829954" placeholder="La date" required>
-    <input type="time" name="entry.797132052" placeholder="Horaire" required>
-    <textarea name="entry.1450805197" placeholder="Adresse de départ"></textarea>
-    <textarea name="entry.591613414" placeholder="Destination"></textarea>
-    <textarea name="entry.75253586" placeholder="Infos supplémentaires"></textarea>
-    <button type="submit">Envoyer la demande</button>
-
-  </form>
-
-  <iframe name="hidden_iframe" style="display:none;"></iframe>
-  <p id="successMessage" style="display:none;">✅ Merci ! Votre demande a bien été envoyée. Nous vous contactons rapidement.</p>
+  <iframe
+    src="https://docs.google.com/forms/d/e/1FAIpQLScaQvuAIGOUQ3mhsa6GoOG9Pacx1B_XiJ5khJ_lGlQvNxJRNQ/viewform?embedded=true"
+    width="100%"
+    height="950"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0">
+    Chargement…
+  </iframe>
+</section>
 </section>
   
 <section class="seo-hidden">
